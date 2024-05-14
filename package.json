@@ -1,0 +1,20 @@
+{
+  "name": "unit-test-jest",
+  "version": "1.0.0",
+  "description": "Unit test with Jest",
+  "main": "app.js",
+  "type": "module",
+  "scripts": {
+    "start": "node app.js",
+    "test": "jest --watchAll --verbose --coverage" // --env node
+  },
+  "jest": {
+    "testEnvironment": "node"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0"
+  },
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}
