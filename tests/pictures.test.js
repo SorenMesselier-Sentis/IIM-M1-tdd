@@ -1,4 +1,4 @@
-const { getHotelPictures } = require("../src/pictures.js");
+const getHotelPictures = require("../src/pictures.js");
 
 test("Je suis un utilisateur, qui veux uniquement afficher la liste des photos d'un hotel (ex: hotel1)", () => {
   const hotelName = "hotel1";
