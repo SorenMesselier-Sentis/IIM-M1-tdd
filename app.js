@@ -5,7 +5,7 @@ const { getBookingList } = require("./src/reservations.js");
 const { getHotelPictures } = require("./src/pictures.js");
 const { getBookedList } = require("./src/booking.js");
 
-import { NodeTracerProvider } from "@opentelemetry/sdk-trace-node";
+const { NodeTracerProvider } = require("@opentelemetry/sdk-trace-node");
 
 const provider = new NodeTracerProvider();
 provider.register();
@@ -19,17 +19,17 @@ app.listen(PORT, () => {
 });
 
 // EX 1
-functions.http("/hotels", (req, res) => {
+functions.http("getHotels", (req, res) => {
   res.json(getHotelList());
 });
 
 // EX 2
-functions.http("/reservations", (req, res) => {
+functions.http("getReservations", (req, res) => {
   res.json(getBookingList());
 });
 
 // EX 3
-functions.http("/hotels/:hotelId/photos", function (req, res) {
+functions.http("getHotelPictures", function (req, res) {
   const hotelId = req.params.hotelId;
   try {
     const photos = getHotelPictures(hotelId);
@@ -40,15 +40,11 @@ functions.http("/hotels/:hotelId/photos", function (req, res) {
 });
 
 // EX 4
-functions.http("/booked-hotels", (req, res) => {
+functions.http("getBookedHotels", (req, res) => {
   res.json(getBookedList());
 });
 
-functions.http("/", (req, res) => {
-  res.status(200).json(getHotelList());
-});
-
-functions.http("/healt", (req, res) => {
+functions.http("health", (req, res) => {
   res.status(200).send("Hello world");
 });
 
