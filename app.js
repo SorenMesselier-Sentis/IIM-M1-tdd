@@ -14,7 +14,7 @@ const app = express();
 
 const PORT = 5555;
 
-app.listen(PORT, () => {
+app.listen(5555, () => {
   console.log(`Server running on port ${PORT}`);
 });
 
