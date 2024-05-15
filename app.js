@@ -1,4 +1,5 @@
 const express = require("express");
+const functions = require("@google-cloud/functions-framework");
 const { getHotelList } = require("./src/hotels.js");
 const { getBookingList } = require("./src/reservations.js");
 const { getHotelPictures } = require("./src/pictures.js");
@@ -18,17 +19,17 @@ app.listen(8080, () => {
 });
 
 // EX 1
-app.get("/hotels", (req, res) => {
+functions.http("/hotels", (req, res) => {
   res.json(getHotelList());
 });
 
 // EX 2
-app.get("/reservations", (req, res) => {
+functions.http("/reservations", (req, res) => {
   res.json(getBookingList());
 });
 
 // EX 3
-app.get("/hotels/:hotelId/photos", function (req, res) {
+functions.http("/hotels/:hotelId/photos", function (req, res) {
   const hotelId = req.params.hotelId;
   try {
     const photos = getHotelPictures(hotelId);
@@ -39,15 +40,15 @@ app.get("/hotels/:hotelId/photos", function (req, res) {
 });
 
 // EX 4
-app.get("/booked-hotels", (req, res) => {
+functions.http("/booked-hotels", (req, res) => {
   res.json(getBookedList());
 });
 
-app.get("/", (req, res) => {
+functions.http("/", (req, res) => {
   res.status(200).json(getHotelList());
 });
 
-app.get("/healt", (req, res) => {
+functions.http("/healt", (req, res) => {
   res.status(200).send("Hello world");
 });
 
