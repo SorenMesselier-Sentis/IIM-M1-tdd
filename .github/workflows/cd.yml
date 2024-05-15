@@ -22,7 +22,9 @@ jobs:
           export_default_credentials: true
 
       - name: Authenticate with Google Cloud SDK
-        run: gcloud auth activate-service-account --key-file=${{ secrets.GCLOUD_KEY }}
+        run: |
+          echo "${{ secrets.GCLOUD_KEY }}" > /tmp/key.json
+          gcloud auth activate-service-account --key-file=/tmp/key.json
 
       - name: Deploy Cloud Function
         run: |
