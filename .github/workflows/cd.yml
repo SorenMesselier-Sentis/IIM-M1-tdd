@@ -25,6 +25,11 @@ jobs:
         # finish by writting q in the terminal
         run: echo "Tests en cours" && npm test -- --watchAll=false && echo "Tests terminés"
 
+      - name: Upload coverage reports to Codecov
+        uses: codecov/codecov-action@v4.0.1
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+
       - name: Set up Google Cloud SDK
         uses: google-github-actions/setup-gcloud@v0.2.1
         with:

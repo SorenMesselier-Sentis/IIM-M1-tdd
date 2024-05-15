@@ -5,10 +5,29 @@ const { getBookingList } = require("./src/reservations.js");
 const { getHotelPictures } = require("./src/pictures.js");
 const { getBookedList } = require("./src/booking.js");
 
+const { CodeCovOpenTelemetry } = require("@codecov/node-codecov-opentelemetry");
 const { NodeTracerProvider } = require("@opentelemetry/sdk-trace-node");
+const { BatchSpanProcessor } = require("@opentelemetry/sdk-trace-base");
+const { SpanKind } = require("@opentelemetry/api");
 
+const sampleRate = 1;
+const untrackedExportRate = 1;
+const code = "production::v0.0.1"; //<environment>::<versionIdentifier>
 const provider = new NodeTracerProvider();
 provider.register();
+
+const codecov = new CodeCovOpenTelemetry({
+  repositoryToken: "af3846a3-b80f-4937-8b5d-17459b287fdb", //from repository settings page on Codecov.
+  environment: "production", //or others as appropriate
+  versionIdentifier: "v0.0.2", //semver, commit SHA, etc
+  filters: {
+    allowedSpanKinds: [SpanKind.SERVER],
+  },
+  codecovEndpoint: "api.codecov.io",
+  sampleRate,
+  untrackedExportRate,
+  code,
+});
 
 const app = express();
 
