@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1715696325864" clover="3.2.0">
-  <project timestamp="1715696325864" name="All files">
+<coverage generated="1715697743965" clover="3.2.0">
+  <project timestamp="1715697743965" name="All files">
     <metrics statements="28" coveredstatements="14" conditionals="8" coveredconditionals="2" methods="6" coveredmethods="3" elements="42" coveredelements="19" complexity="0" loc="28" ncloc="28" packages="1" files="4" classes="4"/>
     <file name="booking.js" path="/Users/taranis/Developer/Courses/M1/2.testing/1.td/src/booking.js">
       <metrics statements="9" coveredstatements="1" conditionals="4" coveredconditionals="0" methods="2" coveredmethods="0"/>

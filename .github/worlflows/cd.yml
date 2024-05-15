@@ -1,0 +1,31 @@
+name: Deploy Cloud Function
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Set up Google Cloud SDK
+        uses: GoogleCloudPlatform/github-actions/setup-gcloud@master
+        with:
+          version: "latest"
+          service_account_key: ${{ secrets.GCLOUD_KEY }}
+          project_id: nth-highlander-423208-r5
+
+      - name: Deploy Cloud Function
+        run: |
+          gcloud functions deploy hotel-list \
+          	--quiet \
+            --runtime=nodejs18 \
+            --trigger-http --allow-unauthenticated\
+            --region=us-east1 \
+            --entry-point=getHotels \
+            --source=.
