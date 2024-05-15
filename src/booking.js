@@ -14,4 +14,4 @@ function getBookedList() {
   }
 }
 
-module.export = { getBookedList };
+module.exports = { getBookedList };
