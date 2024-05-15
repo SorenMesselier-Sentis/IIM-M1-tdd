@@ -2,7 +2,7 @@
   "name": "unit-test-jest",
   "version": "1.0.0",
   "description": "Unit test with Jest",
-  "main": "./src/hotels.js",
+  "main": "app.js",
   "scripts": {
     "start": "node app.js",
     "test": "jest --watchAll --verbose --coverage"
@@ -15,6 +15,7 @@
   },
   "dependencies": {
     "@google-cloud/functions-framework": "^3.4.0",
+    "@opentelemetry/sdk-trace-node": "^1.24.1",
     "axios": "^1.6.8",
     "express": "^4.19.2"
   }

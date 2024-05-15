@@ -1,34 +1,35 @@
 const express = require("express");
+const functions = require("@google-cloud/functions-framework");
 const { getHotelList } = require("./src/hotels.js");
 const { getBookingList } = require("./src/reservations.js");
 const { getHotelPictures } = require("./src/pictures.js");
 const { getBookedList } = require("./src/booking.js");
 
-import { NodeTracerProvider } from "@opentelemetry/sdk-trace-node";
+const { NodeTracerProvider } = require("@opentelemetry/sdk-trace-node");
 
 const provider = new NodeTracerProvider();
 provider.register();
 
 const app = express();
 
-const PORT = process.env.PORT || 3000;
+const PORT = 5555;
 
-app.listen(8080, () => {
+app.listen(5555, () => {
   console.log(`Server running on port ${PORT}`);
 });
 
 // EX 1
-app.get("/hotels", (req, res) => {
+app.get("/getHotels", (req, res) => {
   res.json(getHotelList());
 });
 
 // EX 2
-app.get("/reservations", (req, res) => {
+app.get("/getReservations", (req, res) => {
   res.json(getBookingList());
 });
 
 // EX 3
-app.get("/hotels/:hotelId/photos", function (req, res) {
+app.get("/getHotelPictures", function (req, res) {
   const hotelId = req.params.hotelId;
   try {
     const photos = getHotelPictures(hotelId);
@@ -39,15 +40,11 @@ app.get("/hotels/:hotelId/photos", function (req, res) {
 });
 
 // EX 4
-app.get("/booked-hotels", (req, res) => {
+app.get("/getBookedHotels", (req, res) => {
   res.json(getBookedList());
 });
 
-app.get("/", (req, res) => {
-  res.status(200).json(getHotelList());
-});
-
-app.get("/healt", (req, res) => {
+app.get("/health", (req, res) => {
   res.status(200).send("Hello world");
 });
 
