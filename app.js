@@ -14,10 +14,6 @@ const app = express();
 
 const PORT = process.env.PORT || 80;
 
-app.listen(8080, () => {
-  console.log(`Server running on port ${PORT}`);
-});
-
 // EX 1
 functions.http("/hotels", (req, res) => {
   res.json(getHotelList());
