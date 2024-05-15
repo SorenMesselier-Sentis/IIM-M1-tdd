@@ -40,12 +40,4 @@ jobs:
 
       - name: Deploy Cloud Function
         run: |
-          gcloud functions deploy \
-          	--quiet \
-            --gen2 \
-            --runtime=nodejs20 \
-            --trigger-http \
-            --allow-unauthenticated \
-            --region=us-east1 \
-            --entry-point=app \
-            --source=.
+          gcloud functions deploy --quiet --gen2  --runtime=nodejs20 --trigger-http  --allow-unauthenticated --region=us-east1 --entry-point=app  --source=.
