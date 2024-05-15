@@ -1,6 +1,6 @@
 const { getBookedList } = require("../src/booking.js");
 
-test("Je suis un utilisateur, qui veux afficher uniquement la liste des hotels sur lequel j'ai booker une chambre, (photo et nom compris).", () => {
+test("[onUserGetBookedList][Success][ExpectBookedHotelsWithPhotos]", () => {
   const bookedHotels = getBookedList();
   const bookingMock = {
     hotel3: [

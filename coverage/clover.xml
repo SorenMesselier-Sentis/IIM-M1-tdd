@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1715773748900" clover="3.2.0">
-  <project timestamp="1715773748900" name="All files">
+<coverage generated="1715777720538" clover="3.2.0">
+  <project timestamp="1715777720538" name="All files">
     <metrics statements="28" coveredstatements="21" conditionals="8" coveredconditionals="5" methods="6" coveredmethods="5" elements="42" coveredelements="31" complexity="0" loc="28" ncloc="28" packages="1" files="4" classes="4"/>
-    <file name="booking.js" path="/Users/taranis/Developer/Courses/M1/2.testing/1.td/src/booking.js">
+    <file name="booking.js" path="/Users/canardev/Sites/A4/IIM-M1-tdd/src/booking.js">
       <metrics statements="9" coveredstatements="8" conditionals="4" coveredconditionals="3" methods="2" coveredmethods="2"/>
       <line num="2" count="1" type="stmt"/>
       <line num="3" count="1" type="stmt"/>
@@ -14,7 +14,7 @@
       <line num="13" count="1" type="stmt"/>
       <line num="17" count="1" type="stmt"/>
     </file>
-    <file name="hotels.js" path="/Users/taranis/Developer/Courses/M1/2.testing/1.td/src/hotels.js">
+    <file name="hotels.js" path="/Users/canardev/Sites/A4/IIM-M1-tdd/src/hotels.js">
       <metrics statements="11" coveredstatements="6" conditionals="2" coveredconditionals="1" methods="2" coveredmethods="1"/>
       <line num="1" count="1" type="stmt"/>
       <line num="2" count="1" type="stmt"/>
@@ -28,13 +28,13 @@
       <line num="17" count="0" type="stmt"/>
       <line num="21" count="1" type="stmt"/>
     </file>
-    <file name="pictures.js" path="/Users/taranis/Developer/Courses/M1/2.testing/1.td/src/pictures.js">
+    <file name="pictures.js" path="/Users/canardev/Sites/A4/IIM-M1-tdd/src/pictures.js">
       <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
       <line num="2" count="1" type="stmt"/>
       <line num="3" count="1" type="stmt"/>
       <line num="6" count="1" type="stmt"/>
     </file>
-    <file name="reservations.js" path="/Users/taranis/Developer/Courses/M1/2.testing/1.td/src/reservations.js">
+    <file name="reservations.js" path="/Users/canardev/Sites/A4/IIM-M1-tdd/src/reservations.js">
       <metrics statements="5" coveredstatements="4" conditionals="2" coveredconditionals="1" methods="1" coveredmethods="1"/>
       <line num="2" count="1" type="stmt"/>
       <line num="3" count="1" type="cond" truecount="1" falsecount="1"/>
