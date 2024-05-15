@@ -19,17 +19,17 @@ app.listen(PORT, () => {
 });
 
 // EX 1
-functions.http("getHotels", (req, res) => {
+app.get("/getHotels", (req, res) => {
   res.json(getHotelList());
 });
 
 // EX 2
-functions.http("getReservations", (req, res) => {
+app.get("/getReservations", (req, res) => {
   res.json(getBookingList());
 });
 
 // EX 3
-functions.http("getHotelPictures", function (req, res) {
+app.get("/getHotelPictures", function (req, res) {
   const hotelId = req.params.hotelId;
   try {
     const photos = getHotelPictures(hotelId);
@@ -40,11 +40,11 @@ functions.http("getHotelPictures", function (req, res) {
 });
 
 // EX 4
-functions.http("getBookedHotels", (req, res) => {
+app.get("/getBookedHotels", (req, res) => {
   res.json(getBookedList());
 });
 
-functions.http("health", (req, res) => {
+app.get("/health", (req, res) => {
   res.status(200).send("Hello world");
 });
 

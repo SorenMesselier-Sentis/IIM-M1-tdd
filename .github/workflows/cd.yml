@@ -26,7 +26,7 @@ jobs:
         run: echo "Tests en cours" && npm test -- --watchAll=false && echo "Tests terminés"
 
       - name: Set up Google Cloud SDK
-        uses: google-github-actions/setup-gcloud@v2
+        uses: google-github-actions/setup-gcloud@v0.2.1
         with:
           version: "latest"
           service_account_key: ${{ secrets.GCLOUD_KEY }}
@@ -40,4 +40,4 @@ jobs:
 
       - name: Deploy Cloud Function
         run: |
-          gcloud functions deploy app --quiet --gen2  --runtime=nodejs20 --trigger-http  --allow-unauthenticated --region=us-east1 --entry-point=app  --source=.
+          gcloud functions deploy app --gen2  --runtime=nodejs20 --trigger-http --region=us-east1 --entry-point=app  --source=.
