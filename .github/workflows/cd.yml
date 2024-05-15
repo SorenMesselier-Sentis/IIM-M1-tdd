@@ -13,6 +13,17 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v2
 
+      - name: Init node
+        uses: actions/setup-node@v3
+        with:
+          node-version: "20"
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Réalisations des tests
+        run: echo "Tests en cours" && npm test
+
       - name: Set up Google Cloud SDK
         uses: google-github-actions/setup-gcloud@v2
         with:
@@ -33,5 +44,5 @@ jobs:
             --runtime=nodejs18 \
             --trigger-http --allow-unauthenticated \
             --region=us-east1 \
-            --entry-point=getHotels \
+            --entry-point=app \
             --source=.
