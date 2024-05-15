@@ -43,7 +43,8 @@ jobs:
           gcloud functions deploy hotel-list \
             --quiet \
             --runtime=nodejs18 \
-            --trigger-http --allow-unauthenticated \
+            --trigger-http \
+            --allow-unauthenticated \
             --region=us-east1 \
             --entry-point=app \
             --source=.
