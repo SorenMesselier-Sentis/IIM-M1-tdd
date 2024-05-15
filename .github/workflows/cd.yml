@@ -23,7 +23,7 @@ jobs:
 
       - name: Authenticate with Google Cloud SDK
         run: |
-          echo "${{ secrets.GCLOUD_KEY }}" > /tmp/key.json
+          echo "${{ secrets.GCLOUD_KEY }}" | base64 --decode > /tmp/key.json
           gcloud auth activate-service-account --key-file=/tmp/key.json
 
       - name: Deploy Cloud Function
