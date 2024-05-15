@@ -40,9 +40,9 @@ jobs:
 
       - name: Deploy Cloud Function
         run: |
-          gcloud functions deploy hotel-list \
-            --quiet \
-            --runtime=nodejs18 \
+          gcloud functions deploy app \
+            --gen2 \
+            --runtime=nodejs20 \
             --trigger-http \
             --allow-unauthenticated \
             --region=us-east1 \
