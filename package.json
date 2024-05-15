@@ -2,7 +2,7 @@
   "name": "unit-test-jest",
   "version": "1.0.0",
   "description": "Unit test with Jest",
-  "main": "./src/hotels.js",
+  "main": "app.js",
   "scripts": {
     "start": "node app.js",
     "test": "jest --watchAll --verbose --coverage"

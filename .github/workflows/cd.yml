@@ -33,11 +33,6 @@ jobs:
           project_id: nth-highlander-423208-r5
           export_default_credentials: true
 
-      - name: Authenticate with Google Cloud SDK
-        run: |
-          echo "${{ secrets.GCLOUD_KEY }}" | base64 --decode > /tmp/key.json
-          gcloud auth activate-service-account --key-file=/tmp/key.json
-
       - name: Deploy Cloud Function
         run: |
           gcloud functions deploy app --gen2  --runtime=nodejs20 --trigger-http --region=us-east1 --entry-point=app  --source=.
