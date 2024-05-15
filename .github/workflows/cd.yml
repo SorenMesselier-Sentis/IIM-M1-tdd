@@ -22,7 +22,8 @@ jobs:
         run: npm install
 
       - name: Réalisations des tests
-        run: echo "Tests en cours" && npm run test
+        # finish by writting q in the terminal
+        run: echo "Tests en cours" && npm test -- --watchAll=false && echo "Tests terminés"
 
       - name: Set up Google Cloud SDK
         uses: google-github-actions/setup-gcloud@v2
