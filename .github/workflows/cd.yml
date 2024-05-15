@@ -31,7 +31,7 @@ jobs:
           gcloud functions deploy hotel-list \
             --quiet \
             --runtime=nodejs18 \
-            --trigger-http \
+            --trigger-http --allow-unauthenticated \
             --region=us-east1 \
             --entry-point=getHotels \
             --source=.
