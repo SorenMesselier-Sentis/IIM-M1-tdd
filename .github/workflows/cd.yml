@@ -47,4 +47,5 @@ jobs:
             --allow-unauthenticated \
             --region=us-east1 \
             --entry-point=app \
+            --verbosity=debug \
             --source=.
