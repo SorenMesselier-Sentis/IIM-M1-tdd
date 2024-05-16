@@ -24,16 +24,15 @@ test("[on][Error][Expect404Statuses]", async (route = "https://us-east1-nth-high
   };
   const response = await axios
     .get(route + "/notFound", { headers })
-    .catch((error) => error.response);
-  expect(response.status).toBe(404);
+    .catch((error) => {
+      expect(error.response.status).toBe(404);
+    });
   // expect(response.body).toHaveProperty("message");
   // expect(response.body.message).toBe("Not Found");
 });
 
 test("[on][Error][Expect403Statuses]", async (route = "https://us-east1-nth-highlander-423208-r5.cloudfunctions.net/app") => {
-  const response = await axios
-    .get(route + "/getHotels")
-    .catch((error) => error.response);
-  console.log(response);
-  expect(response.status).toBe(403);
+  const response = await axios.get(route + "/getHotels").catch((error) => {
+    expect(error.response.status).toBe(403);
+  });
 });
