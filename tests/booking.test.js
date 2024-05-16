@@ -1,4 +1,13 @@
 const { getBookedList } = require("../src/booking.js");
+const { connectDB, disconnectDB } = require("../database/database.js");
+
+beforeAll(() => {
+  connectDB();
+});
+
+afterAll(() => {
+  disconnectDB();
+});
 
 test("[onUserGetBookedList][Success][ExpectBookedHotelsWithPhotos]", () => {
   const bookedHotels = getBookedList();

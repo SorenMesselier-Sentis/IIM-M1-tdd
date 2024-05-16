@@ -4,7 +4,6 @@ const { getHotelList } = require("./src/hotels.js");
 const { getBookingList } = require("./src/reservations.js");
 const { getHotelPictures } = require("./src/pictures.js");
 const { getBookedList } = require("./src/booking.js");
-
 const { CodeCovOpenTelemetry } = require("@codecov/node-codecov-opentelemetry");
 const { NodeTracerProvider } = require("@opentelemetry/sdk-trace-node");
 const { BatchSpanProcessor } = require("@opentelemetry/sdk-trace-base");
