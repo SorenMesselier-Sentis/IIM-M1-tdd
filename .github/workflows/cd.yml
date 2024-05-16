@@ -21,6 +21,9 @@ jobs:
       - name: Install dependencies
         run: npm install
 
+      - name: create Bearer token
+        run: export BEARER=$(gcloud auth print-identity-token)
+
       - name: Réalisations des tests
         # finish by writting q in the terminal
         run: echo "Tests en cours" && npm test -- --watchAll=false && echo "Tests terminés"
